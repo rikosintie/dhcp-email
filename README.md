@@ -1,4 +1,4 @@
-# Email the interface name and IP address after DHCP assignment
+## Email the interface name and IP address after DHCP assignment
 
 I got the idea and most of the code from [colonket
 /
