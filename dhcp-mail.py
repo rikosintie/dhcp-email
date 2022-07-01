@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
-# https://github.com/colonket/dhcp-beacon
-# Import smtplib for the actual sending function
+'''
+based on dhcp-beacon
+https://github.com/colonket/dhcp-beacon
+Import smtplib for the actual sending function
+This script is located on github.com at
+
+'''
+
+__author__ = "Michael Hubbard"
+__author_email__ = "michael.hubbard999@gmail.com"
+__copyright__ = ""
+__license__ = "Unlicense"
+
 import smtplib
 # Import the email modules we'll need
 from email.message import EmailMessage
