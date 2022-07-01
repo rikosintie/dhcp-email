@@ -4,7 +4,7 @@ based on dhcp-beacon
 https://github.com/colonket/dhcp-beacon
 Import smtplib for the actual sending function
 This script is located on github.com at
-
+https://github.com/rikosintie/dhcp-email.md
 '''
 
 __author__ = "Michael Hubbard"
