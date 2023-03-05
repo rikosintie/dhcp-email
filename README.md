@@ -19,7 +19,15 @@ It allows me to run the console from battery for a couple hours instead of havin
 One note on powering from a switch: DO NOT use a USB-A to micro cable and plug it into the switches USB port. Here is a blog I wrote about a Cisco 4500x that wouldn't start up after a reboot. It turns out that the Get Console was sourcing too much power - [Don't charge your Airconsole (or mobile phone) on your switch's USB port!](https://mwhubbard.blogspot.com/2018/02/)
 
 ## Installation
-1. Copy dhcp-mail.py and creds.py to a directory on the PI
+1. Copy dhcp-mail.py and creds.py to /home/pi/mail on the PI
 2. Edit creds.py to use your credentials
 3. Follow the steps in the dhcp-beacon repo to create the cron job
 4. Install netifaces - python3 -m pip install netifaces
+
+## Automating the Script (Run Script at Boot)
+
+On Linux systems with Cron installed, you can have your system automatically run this script using cronjobs.
+
+Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've cloned dhcp-beacon to your home directory
+
+@reboot pi /usr/bin/python3 /home/pi/mail/dhcp-mail.py
