@@ -24,6 +24,16 @@ One note on powering from a switch: DO NOT use a USB-A to micro cable and plug i
 3. Follow the steps in the dhcp-beacon repo to create the cron job (See below)
 4. Install netifaces - python3 -m pip install netifaces
 
+Here is what the email looks like:
+```
+Host: piconsole
+Time: 2023-03-06 03:55:21.976743
+
+lo - 127.0.0.1
+eth0 - 192.168.10.109
+wlan0 - 192.168.4.1
+```
+
 ## Automating the Script (Run Script at Boot)
 
 On Linux systems with Cron installed, you can have your system automatically run this script using cronjobs.
