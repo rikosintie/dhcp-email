@@ -24,7 +24,7 @@ One note on powering from a switch: DO NOT use a USB-A to micro cable and plug i
 3. Follow the steps in the dhcp-beacon repo to create the cron job (See below)
 4. Install netifaces - python3 -m pip install netifaces
 
-You have to creat an "App Password" on your gmail account for this to work.  
+You have to create an "App Password" on your gmail account for this to work.  
 [Sign in with App Passwords](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjapdTv0Mb9AhUgOkQIHclEB6UQFnoECA4QAw&url=https%3A%2F%2Fsupport.google.com%2Fmail%2Fanswer%2F185833%3Fhl%3Den&usg=AOvVaw2ngMBFcoBvxHCwMirWpPYY)
 
 Here is what the email looks like:
