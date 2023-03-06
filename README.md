@@ -30,4 +30,18 @@ On Linux systems with Cron installed, you can have your system automatically run
 
 Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've cloned dhcp-beacon to your home directory
 
-@reboot pi /usr/bin/python3 /home/pi/mail/dhcp-mail.py
+@reboot pi /usr/bin/python3 /home/pi/email/dhcp-mail.py
+
+## Use IPv6 on the Ethernet interface
+
+[How to enable/disable IPv6 on Raspberry PI (Nord VPN)](https://nordvpn.com/blog/ipv6-enable-or-disable/)
+
+Log in with root privileges.
+Add these three lines to the /etc/sysctl.conf file:
+* net.ipv6.conf.all.disable_ipv6 = 1
+* net.ipv6.conf.default.disable_ipv6 = 1
+* net.ipv6.conf.lo.disable_ipv6 = 1
+Save the file and reboot your computer with this command: “$ sudo reboot.”
+
+
+
