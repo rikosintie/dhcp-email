@@ -43,5 +43,45 @@ Add these three lines to the /etc/sysctl.conf file:
 * net.ipv6.conf.lo.disable_ipv6 = 1
 Save the file and reboot your computer with this command: “$ sudo reboot.”
 
+Once IPv6 is working it generates a link local address. use `ip address` to view the Ethernet interface settings:
+```
+pi@piconsole:~ $ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 00:e0:4c:36:00:84 brd ff:ff:ff:ff:ff:ff
+    inet 169.254.123.146/16 brd 169.254.255.255 scope global noprefixroute eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a78e:35a9:8c19:176f/64 scope link
+       valid_lft forever preferred_lft forever
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether b8:27:eb:92:88:ee brd ff:ff:ff:ff:ff:ff
+    inet 192.168.4.1/24 brd 192.168.4.255 scope global noprefixroute wlan0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::f1fd:ce5f:e53b:2ac8/64 scope link
+       valid_lft forever preferred_lft forever
+```
 
+In this case, the IPv6 address is `fe80::a78e:35a9:8c19:176f` and it doesn't change.
 
+Now you can connect to the PiConsole over Ethernet without a DHCP server assigning it an address. If you don't have an Ethernet hat you can do the same thing with the wireless interface.
+
+On Mac enter `ifconfig` in the terminal and determine what interface you are connected to.
+On Linux enter `ip add` in the terminal and determine what interface you are connected to.
+
+In this case I am using a Mac and the Ethernet interface is en12.
+
+`ssh pi@fe80::a78e:35a9:8c19:176f%en12`
+
+Notice that you have to add `%en12` after the address.
+
+Open a terminal and enter:
+
+## References
+* https://www.instructables.com/LLDPi/
+* https://pimylifeup.com/raspberry-pi-network-scanner/
+* [Login with IP v6](https://riptutorial.com/raspberry-pi/example/24491/login-with-ipv6)
