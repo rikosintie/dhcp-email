@@ -98,3 +98,5 @@ Open a terminal and enter:
 * https://www.instructables.com/LLDPi/
 * https://pimylifeup.com/raspberry-pi-network-scanner/
 * [Login with IP v6](https://riptutorial.com/raspberry-pi/example/24491/login-with-ipv6)
+* [Playing with IPv6 for fun and profit](https://github.com/zbetcheckin/IPv6/blob/master/README.md#ipv6-network-discovery)
+
