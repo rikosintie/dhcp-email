@@ -41,11 +41,17 @@ wlan0 - 192.168.4.1
 
 On Linux systems with Cron installed, you can have your system automatically run this script using cronjobs.
 
-Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've cloned dhcp-beacon to your home directory
+Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've cloned dhcp-beacon to your home directory.
 
 @reboot pi /usr/bin/python3 /home/pi/email/dhcp-mail.py
 
-## Use IPv6 on the Ethernet interface
+Use:
+`crontab -e`  
+When you save and exit you will see:  
+
+`crontab: installing new crontab`  
+
+## Use IPv6 on the Ethernet interface  
 
 [How to enable/disable IPv6 on Raspberry PI (Nord VPN)](https://nordvpn.com/blog/ipv6-enable-or-disable/)
 
