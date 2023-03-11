@@ -21,6 +21,7 @@ from socket import gethostname
 
 from creds import str_username, str_password, list_recipients
 
+print(f"username: {str_username}\n Password: {str_password}\n Recipients: {list_recipients}")
 
 def main():
     # Subject
