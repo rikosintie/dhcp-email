@@ -41,9 +41,13 @@ wlan0 - 192.168.4.1
 
 On Linux systems with Cron installed, you can have your system automatically run this script using cronjobs.
 
-Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've cloned dhcp-beacon to your home directory.
+Add the following to the /etc/crontab file, substituting username with your username to have the script run when your computer reboots. This assumes you've copied the two python scripts to /home/pi/email directory.
 
-@reboot pi /usr/bin/python3 /home/pi/email/dhcp-mail.py
+@reboot sleep 15 && /usr/bin/python3 /home/pi/email/dhcp-mail.py > /home/pi/email/mail.txt 2>&1
+
+This will write a log file `mail.txt` to the email directory with the results of the job.
+
+The sleep 15 pauses the job for 15 seconds to give the interfaces time to get addresses.
 
 Use:
 `crontab -e`  
